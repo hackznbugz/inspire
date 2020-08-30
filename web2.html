@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Concert+One|Varela+Round&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+    <style>
+    
+:root
+{
+    --color1: #E1F5FE;
+    --color2: #472FDC;
+    --color3: #ED9212;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+}
+
+body {
+    //background: rgb(26,60,88);
+    //background: #E4961B;
+    //background: var(--color1);
+    overflow: hidden;
+}
+
+header
+{
+    height: auto;
+    width: 100vw;
+    //background: var(--color1);
+    padding: 0 0 10px 0;
+}
+
+
+.header
+{
+    height: 100%;
+    width: 100%;
+    background: url('https://i.ibb.co/6XtqfYy/20191117-235923.png');
+    background-repeat: no-repeat;
+}
+
+.header-nav
+{
+    display: grid;
+    width: 100%;
+    height: 55px;
+    //background: red;
+    grid-template-columns: 5fr 1.5fr 1.5fr;
+    transition: 0.5s;
+}
+
+#text.sticky
+{
+    padding: 55px 8px 0 30px;
+}
+
+.header-nav.sticky
+{
+    position: fixed;
+    background: #fff;
+    box-shadow: 0 1.5px 2.5px rgba(0,0,0,0.16);
+    margin: 0 0 55px 0;
+    z-index: 100;
+}
+
+.header-nav > .hm
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-nav > .ld
+{
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 30px;
+    font-size: 150%;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.ld.sticky
+{
+    color: #000;
+}
+
+.header-btn
+{
+    height: 45%;
+    width: 90%;
+    border: none;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+    cursor: pointer;
+}
+
+.header-btn.sticky
+{
+    background: var(--color2);
+    color: #fff;
+}
+
+button:focus
+{
+    outline: none;
+}
+
+.header-text
+{
+    height: auto;
+    width: 100%;
+    padding: 10px 8px 0 30px;
+    color: #fff;
+}
+
+.header-context
+{
+    margin: 5px 0;
+}
+
+.h-b-d
+{
+    height: 80px;
+    width: 100%;
+    text-align: right;
+    padding: 10px 35px 10px 0;
+}
+
+.gs, .em
+{
+    height: 35px;
+    width: 100px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    margin: 0 3px;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+.gs
+{
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.cards
+{
+    height: auto;
+    width: 100%;
+    
+}
+
+.card
+{
+    height: 35px;
+    width: 75%;
+    background: #fff;
+    //box-shadow: 0 1.5px 3px rgba(0,0,0,0.16),0 .5px 3px rgba(0,0,0,0.16);
+    border-radius: 0 18px 18px 0;
+    background: rgba(71,47,220,0.3);
+    margin: 8px 0;
+    display: flex;
+    padding: 0 0 0 8px;
+    align-items: center;
+    font-size: 18px;
+}
+
+.card:nth-child(2)
+{
+    width: 60%;
+}
+
+.card:nth-child(3)
+{
+    width: 70%;
+}
+
+.card:nth-child(4)
+{
+    width: 85%;
+}
+
+.ic
+{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background: rgba(71,47,220,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.c-t
+{
+    margin: 0 5px;
+    //font-weight: bold;
+    font-size: 18px;
+    color: var(--color2);
+}
+
+//.content-1
+{
+    height: 100vh;
+    width: 100vw;
+    background: url('https://i.ibb.co/Dp5Ht1q/20191118-092510.png');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.content-1
+{
+    height: auto;
+    width: 100%;
+    padding: 0 0 0 20px;
+}
+
+.title-div
+{
+    height: auto;
+    width: 80vw;
+    margin: 20px 0 0 20px;
+}
+
+.title-name
+{
+    font-size: 200%;
+    color: var(--color2);
+}
+
+.t-underline
+{
+    height: 5px;
+    width: 30%;
+    background: rgba(71,47,220,0.5);
+    border-radius: 10px;
+    margin: 0 0 20px 0;
+}
+
+.toolbar
+{
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 0 10px 0;
+}
+
+.tool
+{
+    height: 35px;
+    //background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px 5px 5px;
+    border-radius: 20px;
+    padding: 0 8px 0 0;
+    border: 1px solid rgba(71,47,220,0.5);
+}
+
+.count
+{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background: rgba(71,47,220,0.5);
+    color: var(--color2);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    color: #fff;
+}
+
+.tool:nth-child(1)
+{
+    background: rgba(71,47,220,0.3);
+    color: #fff;
+}
+
+.tool-name
+{
+    color: var(--color2);
+    font-size: 15px;
+}
+
+#images-holder
+{
+    height: auto;
+    width: 100vw;
+}
+
+.img-holder
+{
+    height: auto;
+    background: url('https://i.ibb.co/6bKs0GP/images-14.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 90%;
+    margin: 8px auto;
+    border-radius: 5px; 
+    padding: 20px 0 0 0;
+    //cursor: pointer;
+}
+
+.w-meta
+{
+    height: 35px;
+    width: 100%;
+    //background: red;
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    padding: 0 0 150px 0;
+}
+
+.love
+{
+    height: 100%;
+    width: 30px;
+    background: rgba(255,255,255,0.5);
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    //margin: 3px 0;
+}
+
+.w-name
+{
+    color: #fff;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.w-meta-2
+{
+    height: 35px;
+    width: 100%;
+    padding: 0 0 0 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    color: #fff;
+}
+
+.post-holder
+{
+    height: auto;
+    width: 100vw;
+    //background: rgba(71,47,220,0.3);
+    padding: 25px 0;
+}
+
+.post
+{
+    height: auto;
+    width: 90%;
+    margin: 8px auto 12px auto;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 2.5px rgba(71,47,220,0.16);
+    padding: 0 0 10px 0;
+}
+
+.post.sub
+{
+    box-shadow: 0 0px 0px rgb(0,0,0,0.1);
+}
+
+.post-img
+{
+    height: auto;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.read-more
+{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #fff;
+    position: relative;
+    top: -30px;
+    left: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1.5px 2.5px rgba(0,0,0,0.18);
+}
+
+.read-more.sub
+{
+    background: rgb(26,60,88);
+    color: #fff;
+}
+
+.post-con
+{
+    padding: 10px;
+    position: relative;
+    top: -20px;
+}
+
+.p-t
+{
+    margin: 0 0 5px 0;
+    color: var(--color2);
+}
+
+.p-t.sub
+{
+    color: rgb(26,60,88);
+}
+
+.p-con
+{
+    color: #aaa;
+}
+
+.w-meta-2.next
+{
+    color: var(--color2);
+    margin: 13px 0 0 0;
+    height: auto;
+    padding: 0;
+}
+
+.p-meta
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.per-holder
+{
+    height: auto;
+    width: 100vw;
+    background: rgb(26,60,88);
+}
+
+.per
+{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 18px 0;
+    margin: 15px 0 0 0;
+}
+
+.per-text
+{
+    width: 90%;
+    text-align: center;
+    color: #fff;
+}
+
+.per-i-h
+{
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    background: #fff;
+    //color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150%;
+}
+
+.per-i-h:nth-child(2)
+{
+    background: var(--color2);
+}
+
+.per-name
+{
+    margin: 8px 0;
+    color: #fff;
+}
+
+.mem-count-h
+{
+    height: auto;
+    width: 100vw;
+    background: rgba(26,60,88,0.9);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    color: #fff;
+}
+
+.mem-count-h > div
+{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.w-w
+{
+    height: 70px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    background: #4CAF50;
+    background: rgba(26,60,88,0.8);
+    color: #fff;
+    padding: 5px 0;
+}
+
+.w-w > div:nth-child(2)
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.w-w > div:nth-child(1)
+{
+    display: flex;
+    padding: 0 0 0 20px;
+    align-items: center;
+}
+
+.w-wait
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.w-w-b
+{
+    height: 35px;
+    width: 100px;
+    background: #fff;
+    border-radius: 18px;
+    border: none;
+}
+
+.footer
+{
+    height: 55px;
+    width: 100vw;
+    background: rgba(26,60,88,0.7);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loader
+{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color2);
+    position: absolute;
+}
+
+/* This loader is collected ! I do not own it! */
+
+.sk-cube-grid {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #fff;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1); 
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  } 
+}
+
+
+
+    </style>
+    </head>
+    <body>
+    
+    <div id="loader">
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+            
+        </div>
+    </div>
+    
+        <header>
+            <div id="mainHead" class="header">
+                <div id="head" class="header-nav">
+                    <div class="ld">
+                        <p class="logo">INSPIRE</p>
+                    </div>
+                    <div class="hm">
+                        <button class="header-btn">Login</button>
+                    </div>
+                    <div class="hm">
+                        <button class="header-btn">Signup</button>
+                    </div>
+                </div>
+                
+                <div id="text" class="header-text">
+                    <h2 class="header-title">
+                        What are we providing to you?
+                    </h2>
+                    <p class="header-context">
+                        We are providing a huge opportunity to build your career up and set a good proper plan for your life just right now. Take your decision as soon as possible and connect with us to get involed in. We are  waiting for your kind response. We also hope you will find our service quite good and enjoyable. Hurry Up!
+                    </p>
+                    <div class="h-b-d">
+                        <button class="gs">Get Started</button>
+                        <button class="em">Explore More</button>
+                    </div> 
+                    
+                </div>
+                
+                <div id="cards" class="cards">
+                        <div class="card">
+                            <p class="ic"><i class="fa fa-star"></i></p>
+                            <p class="c-t">High Performance</p>
+                        </div>
+                        <div class="card">
+                            <p class="ic"><i class="fa fa-star"></i></p>
+                            <p class="c-t">Best Quality</p>
+                        </div>
+                        <div class="card">
+                            <p class="ic"><i class="fa fa-star"></i></p>
+                            <p class="c-t">Excellent Power</p>
+                        </div>
+                        <div class="card">
+                            <p class="ic"><i class="fa fa-star"></i></p>
+                            <p class="c-t">Double Lifetime</p>
+                        </div>
+                    </div>
+                
+            </div>
+        </header>
+        
+        <section class="content">
+        
+            
+        <div class="title-div">
+                <h1 class="title-name">Our Memories.</h1>
+                <div class="t-underline"></div>
+            </div>
+        
+        
+        <div class="whole-con">
+        
+        <div class="content-1">
+            
+            <div class="toolbar">
+            
+                <div class="tool">
+                    <p class="count">35</p>
+                    <p class="tool-name">Designs</p>
+                </div>
+                
+                <div class="tool">
+                    <p class="count">16</p>
+                    <p class="tool-name">Gallery</p>
+                </div>
+                
+                <div class="tool">
+                    <p class="count">28</p>
+                    <p class="tool-name">Works</p>
+                </div>
+                
+                
+            </div>
+            
+            </div>
+            
+            <div id="images-holder">
+            
+            
+                <div class="img-holder">
+                    
+                    <div class="w-meta">
+                        <p class="w-name">
+                         We care our customer.
+                        </p>
+                        <p class="love">
+                            <i class="fa fa-heart-o"></i>
+                        </p>
+                    </div>
+                    
+                    <div class="w-meta-2">
+                        <p class="view">
+                            <i class="fa fa-eye"></i> 6.8k
+                        </p>
+                        <p class="com">
+                            <i class="fa fa-comment"></i> 78
+                        </p>
+                    </div>
+                </div>
+            
+                
+                <div class="img-holder">
+                    
+                    <div class="w-meta">
+                        <p class="w-name">
+                         We care our customer.
+                        </p>
+                        <p class="love">
+                            <i class="fa fa-heart-o"></i>
+                        </p>
+                    </div>
+                    
+                    <div class="w-meta-2">
+                        <p class="view">
+                            <i class="fa fa-eye"></i> 6.8k
+                        </p>
+                        <p class="com">
+                            <i class="fa fa-comment"></i> 78
+                        </p>
+                    </div>
+                </div>
+                
+                
+                <div class="img-holder">
+                    
+                    <div class="w-meta">
+                        <p class="w-name">
+                         We care our customer.
+                        </p>
+                        <p class="love">
+                            <i class="fa fa-heart-o"></i>
+                        </p>
+                    </div>
+                    
+                    <div class="w-meta-2">
+                        <p class="view">
+                            <i class="fa fa-eye"></i> 6.8k
+                        </p>
+                        <p class="com">
+                            <i class="fa fa-comment"></i> 78
+                        </p>
+                    </div>
+                </div>
+                
+                
+                <div class="img-holder">
+                    
+                    <div class="w-meta">
+                        <p class="w-name">
+                         We care our customer.
+                        </p>
+                        <p class="love">
+                            <i class="fa fa-heart-o"></i>
+                        </p>
+                    </div>
+                    
+                    <div class="w-meta-2">
+                        <p class="view">
+                            <i class="fa fa-eye"></i> 6.8k
+                        </p>
+                        <p class="com">
+                            <i class="fa fa-comment"></i> 78
+                        </p>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="img-holder">
+                    
+                    <div class="w-meta">
+                        <p class="w-name">
+                         We care our customer.
+                        </p>
+                        <p class="love">
+                            <i class="fa fa-heart-o"></i>
+                        </p>
+                    </div>
+                    
+                    <div class="w-meta-2">
+                        <p class="view">
+                            <i class="fa fa-eye"></i> 6.8k
+                        </p>
+                        <p class="com">
+                            <i class="fa fa-comment"></i> 78
+                        </p>
+                    </div>
+                </div>
+                
+                
+            
+            
+                
+            </div>
+            
+            
+        </div>
+            
+            
+            <div class="title-div">
+                <h1 class="title-name">Recent Articles.</h1>
+                <div class="t-underline"></div>
+            </div>
+            
+            <div class="post-holder">
+            
+            
+            <!-------->
+            
+                <div class="post">
+                    <div class="post-img-h">
+                        <img src="https://i.ibb.co/6bKs0GP/images-14.jpg" class="post-img" />
+                        <p class="read-more">
+                        
+                        
+                        
+                            <i class="fa fa-play"></i>
+                        
+                        
+                        </p>
+                    </div>
+                    
+                    
+                    <div class="post-con">
+                        <h2 class="p-t">
+                            This is a new post title.
+                        </h2>
+                        <p class="p-con">
+                            We are providing a huge opportunity to build your career up and set a good proper plan for your life just right now. Take your decision as soon as possible and connect with us to get involed in. We are  waiting for your kind response. We also hope you will find our service quite good and enjoyable. Hurry Up!
+                        </p>
+                        
+                        <div class="w-meta-2 next">
+                        <p class="view">
+                            <i class="fa fa-eye"></i> 6.8k
+                        </p>
+                        <p class="com">
+                            <i class="fa fa-comment"></i> 78
+                        </p>
+                        <li>Html</li>
+                        <li>Admin</li>
+                    </div>
+                    
+                        
+                    </div>
+                    
+                    
+                    
+                    <div class="post sub">
+                    <div class="post-img-h">
+                        <img src="https://i.ibb.co/MG08nBB/images-5.jpg" class="post-img" />
+                        <p class="read-more sub">
+                        
+                        
+                        
+                            <i class="fa fa-play"></i>
+                        
+                        
+                        </p>
+                    </div>
+                    
+                    
+                    <div class="post-con">
+                        <h2 class="p-t sub">
+                            This is a new sub post.
+                        </h2>
+                        <p class="p-con">
+                            We are providing a huge opportunity to build your career up and set a good proper plan for your life just right now. Take your decision as soon as possible and connect with us to get involed in. We are  waiting for your kind response. We also hope you will find our service quite good and enjoyable. Hurry Up!
+                        </p>
+                        
+                        <!--<div class="w-meta-2 next">
+                        <p class="view">
+                            <i class="fa fa-eye"></i> 6.8k
+                        </p>
+                        <p class="com">
+                            <i class="fa fa-comment"></i> 78
+                        </p>
+                        <li>Html</li>
+                        <li>Admin</li>
+                    </div>-->
+                    
+                        
+                    </div>
+                    
+                    </div>
+                    
+                    
+                    
+                    
+                </div>
+                
+                
+                <!------->
+                
+                
+                <!-------->
+            
+                <div class="post">
+                    <div class="post-img-h">
+                        <img src="https://i.ibb.co/6bKs0GP/images-14.jpg" class="post-img" />
+                        <p class="read-more">
+                        
+                        
+                        
+                            <i class="fa fa-play"></i>
+                        
+                        
+                        </p>
+                    </div>
+                    
+                    
+                    <div class="post-con">
+                        <h2 class="p-t">
+                            This is a new post title.
+                        </h2>
+                        <p class="p-con">
+                            We are providing a huge opportunity to build your career up and set a good proper plan for your life just right now. Take your decision as soon as possible and connect with us to get involed in. We are  waiting for your kind response. We also hope you will find our service quite good and enjoyable. Hurry Up!
+                        </p>
+                        
+                        <div class="w-meta-2 next">
+                        <p class="view">
+                            <i class="fa fa-eye"></i> 6.8k
+                        </p>
+                        <p class="com">
+                            <i class="fa fa-comment"></i> 78
+                        </p>
+                        <li>Html</li>
+                        <li>Admin</li>
+                    </div>
+                    
+                        
+                    </div>
+                    
+                    
+                    
+                    <div class="post sub">
+                    <div class="post-img-h">
+                        <img src="https://i.ibb.co/MG08nBB/images-5.jpg" class="post-img" />
+                        <p class="read-more sub">
+                        
+                        
+                        
+                            <i class="fa fa-play"></i>
+                        
+                        
+                        </p>
+                    </div>
+                    
+                    
+                    <div class="post-con">
+                        <h2 class="p-t sub">
+                            This is a new sub post.
+                        </h2>
+                        <p class="p-con">
+                            We are providing a huge opportunity to build your career up and set a good proper plan for your life just right now. Take your decision as soon as possible and connect with us to get involed in. We are  waiting for your kind response. We also hope you will find our service quite good and enjoyable. Hurry Up!
+                        </p>
+                        
+                        <!--<div class="w-meta-2 next">
+                        <p class="view">
+                            <i class="fa fa-eye"></i> 6.8k
+                        </p>
+                        <p class="com">
+                            <i class="fa fa-comment"></i> 78
+                        </p>
+                        <li>Html</li>
+                        <li>Admin</li>
+                    </div>-->
+                    
+                        
+                    </div>
+                    
+                    </div>
+                    
+                    
+                    
+                    
+                </div>
+                
+                
+                <!------->
+                
+                <!-------->
+            
+                <div class="post">
+                    <div class="post-img-h">
+                        <img src="https://i.ibb.co/6bKs0GP/images-14.jpg" class="post-img" />
+                        <p class="read-more">
+                        
+                        
+                        
+                            <i class="fa fa-play"></i>
+                        
+                        
+                        </p>
+                    </div>
+                    
+                    
+                    <div class="post-con">
+                        <h2 class="p-t">
+                            This is a new post title.
+                        </h2>
+                        <p class="p-con">
+                            We are providing a huge opportunity to build your career up and set a good proper plan for your life just right now. Take your decision as soon as possible and connect with us to get involed in. We are  waiting for your kind response. We also hope you will find our service quite good and enjoyable. Hurry Up!
+                        </p>
+                        
+                        <div class="w-meta-2 next">
+                        <p class="view">
+                            <i class="fa fa-eye"></i> 6.8k
+                        </p>
+                        <p class="com">
+                            <i class="fa fa-comment"></i> 78
+                        </p>
+                        <li>Html</li>
+                        <li>Admin</li>
+                    </div>
+                    
+                        
+                    </div>
+                    
+                    
+                    
+                    <div class="post sub">
+                    <div class="post-img-h">
+                        <img src="https://i.ibb.co/MG08nBB/images-5.jpg" class="post-img" />
+                        <p class="read-more sub">
+                        
+                        
+                        
+                            <i class="fa fa-play"></i>
+                        
+                        
+                        </p>
+                    </div>
+                    
+                    
+                    <div class="post-con">
+                        <h2 class="p-t sub">
+                            This is a new sub post.
+                        </h2>
+                        <p class="p-con">
+                            We are providing a huge opportunity to build your career up and set a good proper plan for your life just right now. Take your decision as soon as possible and connect with us to get involed in. We are  waiting for your kind response. We also hope you will find our service quite good and enjoyable. Hurry Up!
+                        </p>
+                        
+                        <!--<div class="w-meta-2 next">
+                        <p class="view">
+                            <i class="fa fa-eye"></i> 6.8k
+                        </p>
+                        <p class="com">
+                            <i class="fa fa-comment"></i> 78
+                        </p>
+                        <li>Html</li>
+                        <li>Admin</li>
+                    </div>-->
+                    
+                        
+                    </div>
+                    
+                    </div>
+                    
+                    
+                    
+                    
+                </div>
+                
+                
+                <!------->
+                
+                
+                
+            </div>
+            
+            
+            
+             <div class="title-div">
+                <h1 class="title-name">Performances.</h1>
+                <div class="t-underline"></div>
+            </div>
+            
+            
+            <div class="per-holder">
+            
+            
+                <div class="per">
+                    <div class="per-i-h">
+                        
+                        <i class="fa fa-area-chart"></i>
+                    </div>
+                    
+                    <h3 class="per-name">High Performance</h3>
+                    <p class="per-text">We are providing a huge opportunity to build your career up and set a good proper plan for your life just right now. Take your decision as soon as possible and connect with us to get involed in. We are  waiting for your kind response. We also hope you will find our service quite good and enjoyable. Hurry Up!</p>
+                </div>
+                
+                
+                <div class="per">
+                    <div class="per-i-h">
+                        
+                        <i class="fa fa-bar-chart"></i>
+                    </div>
+                    
+                    <h3 class="per-name">Best Quality</h3>
+                    <p class="per-text">We are providing a huge opportunity to build your career up and set a good proper plan for your life just right now. Take your decision as soon as possible and connect with us to get involed in. We are  waiting for your kind response. We also hope you will find our service quite good and enjoyable. Hurry Up!</p>
+                </div>
+                
+                
+                <div class="per">
+                    <div class="per-i-h">
+                        
+                        <i class="fa fa-line-chart"></i>
+                    </div>
+                    
+                    <h3 class="per-name">Excellent Power</h3>
+                    <p class="per-text">We are providing a huge opportunity to build your career up and set a good proper plan for your life just right now. Take your decision as soon as possible and connect with us to get involed in. We are  waiting for your kind response. We also hope you will find our service quite good and enjoyable. Hurry Up!</p>
+                </div>
+                
+                
+                <div class="per">
+                    <div class="per-i-h">
+                        
+                        <i class="fa fa-pie-chart"></i>
+                    </div>
+                    
+                    <h3 class="per-name">Double Lifetime</h3>
+                    <p class="per-text">We are providing a huge opportunity to build your career up and set a good proper plan for your life just right now. Take your decision as soon as possible and connect with us to get involed in. We are  waiting for your kind response. We also hope you will find our service quite good and enjoyable. Hurry Up!</p>
+                </div>
+                
+                
+                
+            </div>
+            
+            <div class="mem-count-h">
+                <div class="m-c">
+                    <h2>Works Done</h2>
+                    <p class="w-d">1500+</p>
+                </div>
+                <div class="m-c">
+                    <h2>Served</h2>
+                    <p class="w-d">650+</p>
+                </div>
+                <div class="m-c">
+                    <h2>Services</h2>
+                    <p class="w-d">280+</p>
+                </div>
+            </div>
+            
+            <div class="w-w">
+                <div>
+                    <p class="w-wait">Why waiting?</p>
+                </div>
+                <div>
+                    <button class="w-w-b">Join Us</button>
+                </div>
+            </div>
+            
+            
+        </section>
+        
+        <section class="footer">
+            <p class="copy">© Arb || All rights reserved</p>
+        </section>
+        
+  <script>
+  window.onscroll = () => {
+    
+    let ws = window.pageYOffset;
+    let head = document.getElementById('head');
+    
+    if (ws > head.offsetTop + head.offsetHeight/2){
+        
+        head.classList.add('sticky');
+        document.getElementsByClassName('ld')[0].classList.add('sticky');
+        
+        for (i of document.getElementsByClassName('header-btn'))
+        {
+            i.classList.add('sticky');
+        }
+        
+        document.getElementById('text').classList.add('sticky');
+    
+    }
+    else
+    {
+        if (ws == 0){
+            head.classList.remove('sticky');
+            document.getElementsByClassName('ld')[0].classList.remove('sticky');
+            
+            for (i of document.getElementsByClassName('header-btn'))
+        {
+            i.classList.remove('sticky');
+        }
+        
+        document.getElementById('text').classList.remove('sticky');
+        
+        }
+        
+    }
+    
+}
+
+
+window.onload = () => {
+    
+    loader.style.display = 'none';
+    document.body.style.overflow = 'scroll';
+    
+    mainHead.style.backgroundSize = innerWidth + 'px' + ' ' + text.offsetHeight*2.27 + 'px';
+    
+    cards.style.padding = text.offsetHeight*0.25 + 'px' + ' 0 0 0';
+    
+}
+
+
+  </script>
+    </body>
+</html>
